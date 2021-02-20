@@ -42,11 +42,7 @@ public class JwtTokenUtil {
         String username="";
         try {
             Claims claims = getClaimFromToken(token);
-            System.out.println("---------------");
-            System.out.println(claims);
             username = claims.getSubject();
-            System.out.println(username);
-            System.out.println("---------------");
         } catch (Exception e) {
             username = null;
         }

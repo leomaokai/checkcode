@@ -30,7 +30,7 @@ mybatis-plus:
   type-aliases-package: com.kai.server.pojo
   # 自动驼峰命名
   configuration:
-    map-underscore-to-camel-case: false
+    map-underscore-to-camel-case: true
 
 # Mybatis SQL 打印(方法接口所在的包,不是Mapper.xml所在的包)
 logging:
@@ -41,8 +41,17 @@ jwt:
   # jwt 存储的请求头
   tokenHeader: Authorization
   # jwt 加密解密使用的密钥
-  secret: yeb-secret
+  secret: maokai
   # jwt 的超期限时间(60*60*24)
   expiration: 604800
   # jwt 负载中拿到开头
   tokenHead: Cumter
+
+
+kai:
+  # 指定作业存储路径
+  resource: /resource
+  # 指定结果存放的路径
+  result: /result
+  # 设置相似度检查门限参数值
+  sim: 50

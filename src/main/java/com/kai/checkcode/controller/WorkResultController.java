@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2021-02-19
  */
 @RestController
-@RequestMapping("//work-result")
+@RequestMapping("/workResult")
 public class WorkResultController {
 
 }

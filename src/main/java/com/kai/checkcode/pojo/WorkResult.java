@@ -1,8 +1,9 @@
 package com.kai.checkcode.pojo;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -21,7 +22,6 @@ import java.time.LocalDateTime;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@TableName("work_result")
 @ApiModel(value="WorkResult对象", description="")
 public class WorkResult implements Serializable {
 
@@ -32,19 +32,21 @@ public class WorkResult implements Serializable {
     private Long id;
 
     @ApiModelProperty(value = "作业1的id")
-    private Integer work_first_id;
+    private Integer workFirstId;
 
     @ApiModelProperty(value = "作业2的id")
-    private Integer work_second_id;
+    private Integer workSecondId;
 
     @ApiModelProperty(value = "重复率")
     private String result;
 
     @ApiModelProperty(value = "创建时间")
-    private LocalDateTime create_time;
+    @TableField(fill = FieldFill.INSERT)
+    private LocalDateTime createTime;
 
     @ApiModelProperty(value = "更新时间")
-    private LocalDateTime update_time;
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private LocalDateTime updateTime;
 
 
 }

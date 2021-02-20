@@ -1,6 +1,7 @@
 package com.kai.checkcode.controller;
 
 
+import com.kai.checkcode.service.ICommitService;
 import com.kai.checkcode.service.IWorkContentService;
 import com.kai.checkcode.util.RespBean;
 import com.kai.checkcode.util.RespBeanEnum;
@@ -15,13 +16,13 @@ import javax.annotation.Resource;
 public class CommitController {
 
     @Resource
-    private IWorkContentService workContentService;
+    private ICommitService commitService;
 
     @ApiOperation(value = "提交作业")
     @PostMapping("/commit")
-    public RespBean commitWork(MultipartFile file,String str){
+    public RespBean commitWork(MultipartFile workFile,String workDescribe){
 
-        return RespBean.success(RespBeanEnum.COMMIT_SUCCESS);
+        return commitService.commitWork(workFile,workDescribe);
     }
 
 

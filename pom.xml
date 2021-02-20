@@ -90,12 +90,6 @@
             <scope>system</scope>
             <systemPath>${pom.basedir}/lib/jplag-2.12.1-SNAPSHOT-jar-with-dependencies.jar</systemPath>
         </dependency>
-        <!--      FastDFS-->
-        <dependency>
-            <groupId>com.roncoo</groupId>
-            <artifactId>fastdfs-client-java</artifactId>
-            <version>1.29</version>
-        </dependency>
     </dependencies>
 
     <build>

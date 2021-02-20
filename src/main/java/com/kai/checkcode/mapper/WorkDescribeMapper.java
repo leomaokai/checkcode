@@ -1,7 +1,7 @@
 package com.kai.checkcode.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.kai.checkcode.pojo.Work;
+import com.kai.checkcode.pojo.WorkDescribe;
 
 /**
  * <p>
@@ -11,6 +11,6 @@ import com.kai.checkcode.pojo.Work;
  * @author kai
  * @since 2021-02-19
  */
-public interface WorkMapper extends BaseMapper<Work> {
+public interface WorkDescribeMapper extends BaseMapper<WorkDescribe> {
 
 }

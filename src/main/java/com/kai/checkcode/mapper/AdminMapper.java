@@ -1,7 +1,10 @@
 package com.kai.checkcode.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.kai.checkcode.pojo.Admin;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * <p>
@@ -13,4 +16,5 @@ import com.kai.checkcode.pojo.Admin;
  */
 public interface AdminMapper extends BaseMapper<Admin> {
 
+    IPage<Admin> getListAdmin(Page<Admin> adminPage, @Param("users") Admin admin);
 }

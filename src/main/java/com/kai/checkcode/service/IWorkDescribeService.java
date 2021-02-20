@@ -1,7 +1,7 @@
 package com.kai.checkcode.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.kai.checkcode.pojo.Work;
+import com.kai.checkcode.pojo.WorkDescribe;
 
 /**
  * <p>
@@ -11,6 +11,6 @@ import com.kai.checkcode.pojo.Work;
  * @author kai
  * @since 2021-02-19
  */
-public interface IWorkService extends IService<Work> {
+public interface IWorkDescribeService extends IService<WorkDescribe> {
 
 }

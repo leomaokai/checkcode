@@ -1,6 +1,8 @@
 package com.kai.checkcode.pojo;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -21,7 +23,7 @@ import java.time.LocalDateTime;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @ApiModel(value="Work对象", description="")
-public class Work implements Serializable {
+public class WorkDescribe implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -30,16 +32,18 @@ public class Work implements Serializable {
     private Integer id;
 
     @ApiModelProperty(value = "作业描述")
-    private String describe;
+    private String workDescribe;
 
     @ApiModelProperty(value = "创建时间")
-    private LocalDateTime create_time;
+    @TableField(fill = FieldFill.INSERT)
+    private LocalDateTime createTime;
 
     @ApiModelProperty(value = "更新时间")
-    private LocalDateTime update_time;
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private LocalDateTime updateTime;
 
     @ApiModelProperty(value = "提交人数")
-    private Integer number;
+    private Integer commitNumber;
 
 
 }
