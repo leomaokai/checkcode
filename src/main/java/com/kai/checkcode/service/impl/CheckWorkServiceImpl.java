@@ -31,10 +31,10 @@ public class CheckWorkServiceImpl implements ICheckWorkService {
     @Override
     public String checkResult(String describe, String lang) {
         File retFile = new File(result, describe);
-        // cleanResult(new File(result, describe));
-        if (retFile.listFiles() != null) {
-            return convertMatchesFileToString(new File(retFile, "matches_max.csv"));
-        }
+        cleanResult(new File(result, describe));
+//        if (retFile.listFiles() != null) {
+//            // return convertMatchesFileToString(new File(retFile, "matches_max.csv"));
+//        }
         String ret;
         try {
             List<String> args = new ArrayList<>();
@@ -55,15 +55,18 @@ public class CheckWorkServiceImpl implements ICheckWorkService {
             args.add(new File(result, describe).getPath());
             // 设置相似度检查门限参数值
             args.add("-m");
-            args.add(sim + "%");
+            args.add("1" + "%");
             // 指定源文件存放路径
             args.add("-s");
             String path = new File(resource, describe).getPath();
             args.add(path);
-            System.out.println("CheckWorkServiceImpl==>resourcePath:" + path);
+            args.add("-c");
+            args.add("a.cpp");
+            args.add("b.cpp");
+            //System.out.println("CheckWorkServiceImpl==>resourcePath:" + path);
             String[] toPass = new String[args.size()];
             toPass = args.toArray(toPass);
-            System.out.println("CheckWorkServiceImpl==>toPass" + toPass.toString());
+            //System.out.println("CheckWorkServiceImpl==>toPass" + toPass.toString());
 
             new Program(new CommandLineOptions(toPass)).run();
         } catch (ExitException e) {

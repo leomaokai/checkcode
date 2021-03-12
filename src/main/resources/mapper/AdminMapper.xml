@@ -6,41 +6,36 @@
     <resultMap id="BaseResultMap" type="com.kai.checkcode.pojo.Admin">
         <id column="id" property="id" />
         <result column="username" property="username" />
-        <result column="phone" property="phone" />
         <result column="password" property="password" />
-        <result column="mail" property="mail" />
-        <result column="create_time" property="createTime" />
-        <result column="update_time" property="updateTime" />
-        <result column="role" property="role" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, username, phone, password, mail, create_time, update_time, role
+        id, username,  password
     </sql>
-    <select id="getListAdmin" resultType="com.kai.checkcode.pojo.Admin">
-        SELECT
-            a.`id`,
-            a.`username`,
-            a.`phone`,
-            a.`mail`,
-            a.`role`
-        FROM
-            admin a
-        <if test="users.username!=null and users.username!=''">
-            WHERE a.`username` LIKE CONCAT('%',#{users.username},'%')
-        </if>
-        <if test="users.phone!=null and users.phone!=''">
-            WHERE a.`phone` LIKE CONCAT('%',#{users.phone},'%')
-        </if>
-        <if test="users.mail!=null and users.mail!=''">
-            WHERE a.`mail` LIKE CONCAT('%',#{users.mail},'%')
-        </if>
-        <if test="users.role!=null and users.role!=''">
-            WHERE a.`role` LIKE CONCAT('%',#{users.role},'%')
-        </if>
-        ORDER BY
-            a.`id`
-    </select>
+<!--    <select id="getListAdmin" resultType="com.kai.checkcode.pojo.Admin">-->
+<!--        SELECT-->
+<!--            a.`id`,-->
+<!--            a.`username`,-->
+<!--            a.`phone`,-->
+<!--            a.`mail`,-->
+<!--            a.`role`-->
+<!--        FROM-->
+<!--            admin a-->
+<!--        <if test="users.username!=null and users.username!=''">-->
+<!--            WHERE a.`username` LIKE CONCAT('%',#{users.username},'%')-->
+<!--        </if>-->
+<!--        <if test="users.phone!=null and users.phone!=''">-->
+<!--            WHERE a.`phone` LIKE CONCAT('%',#{users.phone},'%')-->
+<!--        </if>-->
+<!--        <if test="users.mail!=null and users.mail!=''">-->
+<!--            WHERE a.`mail` LIKE CONCAT('%',#{users.mail},'%')-->
+<!--        </if>-->
+<!--        <if test="users.role!=null and users.role!=''">-->
+<!--            WHERE a.`role` LIKE CONCAT('%',#{users.role},'%')-->
+<!--        </if>-->
+<!--        ORDER BY-->
+<!--            a.`id`-->
+<!--    </select>-->
 
 </mapper>

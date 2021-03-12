@@ -26,17 +26,17 @@ public class AdminController {
     @Resource
     private IAdminService adminService;
 
-    @ApiOperation(value = "根据姓名获取管理员信息(分页,默认查全部)")
-    @GetMapping("/")
-    public RespPageBean getListAdmin(@RequestParam(defaultValue = "1") Integer currentPage,
-                                     @RequestParam(defaultValue = "10") Integer size,
-                                     Admin admin){
-        return adminService.getListAdmin(currentPage,size,admin);
-    }
+//    @ApiOperation(value = "根据姓名获取管理员信息(分页,默认查全部)")
+//    @GetMapping("/")
+//    public RespPageBean getListAdmin(@RequestParam(defaultValue = "1") Integer currentPage,
+//                                     @RequestParam(defaultValue = "10") Integer size,
+//                                     Admin admin){
+//        return adminService.getListAdmin(currentPage,size,admin);
+//    }
 
     @ApiOperation(value = "添加管理员")
     @PostMapping("/")
-    public RespBean insertAdmin(Admin admin){
+    public RespBean insertAdmin(@RequestBody Admin admin){
         return adminService.insertAdmin(admin);
     }
 

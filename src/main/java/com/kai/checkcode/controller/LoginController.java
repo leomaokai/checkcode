@@ -22,7 +22,7 @@ public class LoginController {
     private IAdminService adminService;
 
     @ApiOperation(value = "登录之后返回token")
-    @PostMapping("/login")
+    @PostMapping("/login")   // RequestBody 将前端传来的Json格式的数据转换为对象格式
     public RespBean login(@RequestBody AdminLoginParam adminLoginParam, HttpServletRequest request){
         return adminService.login(adminLoginParam.getUsername(),adminLoginParam.getPassword(),request);
     }
